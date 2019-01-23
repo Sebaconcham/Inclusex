@@ -1,0 +1,50 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>
+      {{nombretrivia}}
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-content>
+    <form [formGroup]="myForm" (ngSubmit)="saveData()">
+      <ion-list>
+
+        <ion-item>
+          <ion-label stacked>Pregunta:</ion-label>
+          <ion-input formControlName="pregunta" type="text" placeholder="Escriba la pregunta"></ion-input>
+        </ion-item>
+        <ion-item text-wrap>
+          <p >A continuacion ingrese las alternativas para la pregunta, el orden sera mostrado al azar al paciente</p>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Alternativa correcta:</ion-label>
+          <ion-input formControlName="alternativa_c" type="text" placeholder="Respuesta correcta"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Alternativa incorrectra:</ion-label>
+          <ion-input formControlName="alternativa_i1" type="text" placeholder="Respuesta incorrecta 1"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Alternativa incorrectra:</ion-label>
+          <ion-input formControlName="alternativa_i2" type="text" placeholder="Respuesta incorrecta 2"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Alternativa incorrectra:</ion-label>
+          <ion-input formControlName="alternativa_i3" type="text" placeholder="Respuesta incorrecta 3"></ion-input>
+        </ion-item>
+
+    </ion-list>
+
+    <div padding>
+        <button ion-button block type="submit" [disabled]="!myForm.valid ">Guardar</button>
+    </div>
+
+    </form>
+  </ion-content>
+
+</ion-content>

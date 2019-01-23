@@ -1,0 +1,22 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Trivias</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+      <ion-item  *ngFor="let item of _tr.trivias">
+        <div text-wrap  >
+              <h2>{{item.nombre}}</h2>
+              <p>numero de preguntas:{{item.numero_preguntas}}</p>
+        </div>
+        <button *ngIf="item.numero_preguntas>0" ion-button clear item-end (click)="jugar_trivia(item.nombre,item.numero_preguntas)">
+          Jugar
+        </button>
+    </ion-item>
+  </ion-list>
+</ion-content>

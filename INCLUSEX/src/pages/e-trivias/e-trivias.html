@@ -1,0 +1,27 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Trivias</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+      <ion-item  *ngFor="let item of _tr.trivias">
+        <div text-wrap>
+              <h2>{{item.nombre}}</h2>
+              <p>numero de preguntas:{{item.numero_preguntas}}</p>
+        </div>
+      <button ion-button clear item-end (click)="ver_trivia(item.nombre)">
+        Ver</button>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <button ion-button full round color="secondary" (click)="crear_trivia()">Crear nuevo contenido </button>
+  </ion-toolbar>
+</ion-footer>

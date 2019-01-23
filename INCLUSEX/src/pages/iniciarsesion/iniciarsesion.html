@@ -1,0 +1,40 @@
+
+<ion-content padding>
+  <div align="center">
+    <ion-img width="130" height="130"  src="../assets/imgs/logo2.png" align-items:center></ion-img>
+  </div>
+  <div >
+    <h6 align="center" >Bienvenido a INCLUSEX la primera app
+       movil que ayuda a personas con daño medular a
+      aprender sobre su sexualidad</h6>
+  </div>
+  <div text-wrap>
+    <ion-list>
+      <ion-item>
+          <ion-label floating>Rut o correo</ion-label>
+          <ion-input type="text" [(ngModel)]="rut"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Password</ion-label>
+          <ion-input type="password" [(ngModel)]="contrasena"></ion-input>
+        </ion-item>
+    </ion-list>
+
+  </div>
+  <div padding>
+    <button ion-button
+            block round
+            (click)="ingresar()" >Iniciar sesión</button>
+  </div>
+  <div text-wrap>
+    <ion-item>
+      <p align="center">Si eres paciente o pareja de esta y no tienes cuenta registrate <a  (click)="registrop();"> aqui</a></p>
+    </ion-item>
+
+    <ion-item>
+      <p align="center">si eres especialista y  no tienes</p>
+      <p align="center">cuenta registrate <a  (click)="registroe();"> aqui</a></p>
+    </ion-item>
+  </div>
+</ion-content>

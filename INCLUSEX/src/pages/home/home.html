@@ -1,0 +1,34 @@
+<ion-header>
+
+  <ion-navbar color="twitter">
+    <ion-title>INCLUSEX</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+
+  <p>nombre:{{datos_user.nombre}}</p>
+  <p>tipo de usuario:{{tipo_user}}</p>
+  <ion-grid>
+    <ion-row text-center>
+        <ion-col>
+              <img width="100" height="100"src= "../assets/iconosmodulos/vercontenidos.png" (click)="ver_contenido()" >
+              <p>ver contenido</p>
+        </ion-col>
+        <ion-col>
+              <img width="100" height="100"src= "../assets/iconosmodulos/trivias.png" (click)="ver_trivias()">
+              <p>trivias</p>
+        </ion-col>
+    </ion-row>
+    <ion-row text-center>
+        <ion-col>
+              <img width="100" height="100"src= "../assets/iconosmodulos/mensajes.png" (click)="ver_mensajes()">
+              <p>mensajes</p>
+        </ion-col>
+        <ion-col>
+              <img width="100" height="100"src= "../assets/iconosmodulos/ajustes.png" (click)="ver_ajustes()">
+              <p>ajustes</p>
+        </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

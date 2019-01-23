@@ -1,0 +1,67 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{nombre_trivia}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-slides>
+    <ion-slide  *ngFor="let item of _pr.pr">
+      <div text-wrap>
+            <h2>pregunta: {{item.pregunta}}</h2>
+            <ion-grid>
+              <ion-row text-center>
+                  <ion-col>
+                    <button ion-button round  (click)="nextSlide(item.alternativa1)">
+                      {{item.alternativa1}}</button>
+                  </ion-col>
+                  <ion-col>
+                    <button ion-button round  (click)="nextSlide(item.alternativa2)">
+                      {{item.alternativa2}}</button>
+                  </ion-col>
+                </ion-row >
+                <ion-row text-center>
+                    <ion-col>
+                      <button ion-button round  (click)="nextSlide(item.alternativa3)">
+                        {{item.alternativa3}}</button>
+                    </ion-col>
+                    <ion-col>
+                      <button ion-button round  (click)="nextSlide(item.alternativa4)">
+                        {{item.alternativa4}}</button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            <!-- <p>numero de preguntas:{{item.numero_preguntas}}</p> -->
+      </div>
+  </ion-slide>
+  <ion-slide>
+    <button ion-button round  (click)="nextSlide1()">
+      Terminar trivia</button>
+  </ion-slide>
+  <ion-slide>
+    <h1>Trivia terminada</h1>
+    <h5>Total de preguntas que tenia la trivia:{{this.respuestastotales}}</h5>
+    <h5>Preguntas respondidas correctamente:{{this.respuestascorrectas}}</h5>
+    <div>
+      <progress-bar [progress]=this.progreso [color]="'#488aff'">
+      </progress-bar>
+    </div>
+
+    <button ion-button round  (click)="terminar()">
+
+      Finalizar</button>
+      <button ion-button round  (click)="ver_texto()">
+        ver texto complementario</button>
+  </ion-slide>
+  <ion-slide>
+    <div *ngFor="let item of _pr.trivia">
+      <h1>{{item.titulo}}</h1>
+      <p>{{item.texto}}</p>
+    </div>
+    <button ion-button round  (click)="atras()">
+      ver texto complementario</button>
+  </ion-slide>
+</ion-slides>

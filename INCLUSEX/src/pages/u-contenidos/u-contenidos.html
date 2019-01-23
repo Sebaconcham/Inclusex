@@ -1,0 +1,23 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>listarcontenido</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+      <ion-item *ngFor="let item of _pc.contenidos"
+      >
+        <div text-wrap>
+              <h2>{{item.titulo}}</h2>
+              <p>{{item.resumen}}</p>
+        </div>
+      <button ion-button clear item-end  [navParams]="{contenido: item}"[navPush]="pushPage"
+      >Ver</button>
+    </ion-item>
+  </ion-list>
+</ion-content>

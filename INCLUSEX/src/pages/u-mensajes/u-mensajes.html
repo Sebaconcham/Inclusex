@@ -1,0 +1,41 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Mensajes usuario</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+    <ion-refresher (ionRefresh)="refrescar($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+  <ion-list>
+      <ion-item *ngFor="let item of _pc.mensajes" >
+        <ng-container
+          *ngIf="item.visto_p=='0'; then loggedIn; else loggedOut">
+        </ng-container>
+        <ng-template #loggedIn>
+          <div  text-wrap (click)="ver_mensaje(item)">
+                <p><b>{{item.asunto}}</b></p>
+                <p><b>de:{{item.nombre}}</b></p>
+          </div>
+        </ng-template>
+        <ng-template #loggedOut>
+          <div  text-wrap (click)="ver_mensaje(item)">
+            <p>{{item.asunto}}</p>
+
+            <p>de:{{item.nombre}}</p>
+          </div>
+        </ng-template>
+
+
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <button ion-button full round color="secondary" (click)="enviar_mensaje()">Crear nuevo mensajes </button>
+  </ion-toolbar>
+</ion-footer>

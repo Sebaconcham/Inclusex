@@ -1,0 +1,62 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Editar contenido</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+
+  <form [formGroup]="myForm" (ngSubmit)="saveData()">
+    <ion-list>
+      <ion-item>
+        <ion-label stacked>Titulo:</ion-label>
+        <ion-input formControlName="titulo" type="text" value={{contenido.titulo}}></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Resumen:</ion-label>
+        <ion-input formControlName="resumen" type="text" value={{contenido.resumen}}></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Texto:</ion-label>
+        <ion-textarea formControlName="texto" value={{contenido.texto}} rows="25" cols="80"></ion-textarea>
+      </ion-item>
+      <ion-col>
+        <ion-item>
+          <ion-label stacked >Tipo Lesion</ion-label>
+          <ion-select formControlName="tipo_lesion" interface="action-sheet"placeholder={{contenido.tipo_lesion}} >
+              <ion-option value="completa">completa</ion-option>
+              <ion-option value="incompleta">incompleta</ion-option>
+            </ion-select>
+        </ion-item>
+      </ion-col>
+
+      <ion-col>
+        <ion-item>
+          <ion-label stacked >nivel Lesion</ion-label>
+          <ion-select formControlName="nivel_lesion" interface="action-sheet" placeholder={{contenido.nivel_lesion}}>
+            <ion-option value="1">1</ion-option>
+            <ion-option value="2">2</ion-option>
+            <ion-option value="3">3</ion-option>
+            <ion-option value="4">4</ion-option>
+            <ion-option value="5">5</ion-option>
+            <ion-option value="6">6</ion-option>
+
+            </ion-select>
+        </ion-item>
+      </ion-col>
+
+
+
+
+    </ion-list>
+
+    <div padding>
+      <button ion-button block type="submit" [disabled]="!myForm.valid ">Guardar</button>
+    </div>
+
+  </form>
+</ion-content>

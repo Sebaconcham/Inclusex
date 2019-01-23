@@ -1,0 +1,32 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>respondermensaje</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<p>Asunto:{{mensaje.asunto}}</p>
+<p>Pregunta:</p>
+<p>{{mensaje.pregunta}}</p>
+
+<form [formGroup]="myForm" (ngSubmit)="saveData()">
+  <ion-list>
+
+    <ion-item>
+      <ion-label stacked>Respuesta:</ion-label>
+      <ion-input formControlName="respuesta" type="text" placeholder="Escriba aqui la respuesta"></ion-input>
+    </ion-item>
+
+
+  </ion-list>
+
+  <div padding>
+    <button ion-button block type="submit" [disabled]="!myForm.valid ">Guardar</button>
+  </div>
+
+</form>
+</ion-content>

@@ -1,0 +1,112 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Registro Paceinte/Pareja
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <form [formGroup]="myForm" (ngSubmit)="saveData()">
+    <ion-list>
+
+      <ion-row radio-group formControlName="tipo">
+        <ion-col>
+          <ion-item>
+            <ion-label>Paciente</ion-label>
+            <ion-radio value="paciente"></ion-radio>
+          </ion-item>
+        </ion-col>
+
+        <ion-col>
+          <ion-item>
+            <ion-label>Pareja</ion-label>
+            <ion-radio value="pareja"></ion-radio>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-item>
+        <ion-label stacked>Rut:</ion-label>
+        <ion-input formControlName="rut" type="text" placeholder="rut"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="person" item-start></ion-icon>
+        <ion-label stacked>Nombre:</ion-label>
+        <ion-input formControlName="nombre" type="text" placeholder="Nombre"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="mail" item-start></ion-icon>
+        <ion-label stacked>Correo electronico:</ion-label>
+        <ion-input formControlName="correo" type="email" placeholder="correo"></ion-input>
+      </ion-item>
+
+      <ion-col>
+        <ion-item>
+          <ion-label stacked >Genero</ion-label>
+          <ion-select formControlName="genero" interface="action-sheet">
+              <ion-option value="Femenino">Femenino</ion-option>
+              <ion-option value="Masculino">Masculino</ion-option>
+              <ion-option value="Omitido">Prefiero no decir</ion-option>
+
+            </ion-select>
+        </ion-item>
+      </ion-col>
+
+      <ion-item>
+        <ion-icon name="calendar" item-start></ion-icon>
+        <ion-label stacked>Fecha de nacimiento:</ion-label>
+        <ion-datetime formControlName="fecha_nac" displayFormat="DD-MM-YYYY" placeholder="DD-MM-YYYY"></ion-datetime>
+      </ion-item>
+
+      <ion-col>
+        <ion-item>
+          <ion-label stacked >Tipo Lesion</ion-label>
+          <ion-select formControlName="tipo_lesion" interface="action-sheet">
+              <ion-option value="completa">completa</ion-option>
+              <ion-option value="incompleta">incompleta</ion-option>
+            </ion-select>
+        </ion-item>
+      </ion-col>
+
+      <ion-col>
+        <ion-item>
+          <ion-label stacked >nivel Lesion</ion-label>
+          <ion-select formControlName="nivel_lesion" interface="action-sheet">
+            <ion-option value="1">1</ion-option>
+            <ion-option value="2">2</ion-option>
+            <ion-option value="3">3</ion-option>
+            <ion-option value="4">4</ion-option>
+            <ion-option value="5">5</ion-option>
+            <ion-option value="6">6</ion-option>
+
+            </ion-select>
+        </ion-item>
+      </ion-col>
+
+      <div formGroupName="passwordRetry">
+        <ion-item>
+          <ion-icon name="eye" item-start></ion-icon>
+          <ion-label stacked>Contraseña:</ion-label>
+          <ion-input formControlName="password" type="password" placeholder="Contraseña"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon name="eye" item-start></ion-icon>
+          <ion-label stacked>Confirmar contraseña:</ion-label>
+          <ion-input formControlName="passwordConfirmation" type="password" placeholder="Confirmar contraseña"></ion-input>
+        </ion-item>
+
+      </div>
+
+
+
+    </ion-list>
+
+    <div padding>
+      <button ion-button block type="submit" [disabled]="!myForm.valid ">Guardar</button>
+    </div>
+
+  </form>
+</ion-content>

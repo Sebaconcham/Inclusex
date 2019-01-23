@@ -1,0 +1,29 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>listarcontenido especialista</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-refresher (ionRefresh)="refrescar($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+      <ion-item *ngFor="let item of _ps.contenidos">
+        <div text-wrap>
+              <h2>{{item.titulo}}</h2>
+              <p>{{item.resumen}}</p>
+        </div>
+      <button ion-button clear item-end [navPush]="pushPage" [navParams]="{contenido:item}">
+        View
+      </button>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <button ion-button full round color="secondary" (click)="crear_contenido()">Crear nuevo contenido </button>
+  </ion-toolbar>
+</ion-footer>

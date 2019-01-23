@@ -1,0 +1,18 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{contenido.titulo}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <p>{{contenido.texto}}</p>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <button ion-button full round [navPush]="pushPage" [navParams]="{contenido:contenido}">Editar</button>
+    <button ion-button full  round color="danger" (click)="eliminar_contenido(contenido)">Eliminar</button>
+  </ion-toolbar>
+</ion-footer>

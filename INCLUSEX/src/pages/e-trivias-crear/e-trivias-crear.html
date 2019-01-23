@@ -1,0 +1,41 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>e-trivias</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+  <ion-list>
+      <ion-item *ngFor="let item of _tr.preguntas">
+        <div text-wrap>
+              <p>{{item.pregunta}}</p>
+        </div>
+      <button ion-button clear item-end [navPush]="pushPage" [navParams]="{contenido:item}">
+        View
+      </button>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-col>
+    <ion-item>
+      <ion-label stacked >Texto complementario</ion-label>
+      <ion-select  interface="action-sheet">
+          <ion-option *ngFor="let item of _cn.contenidos "value={{item.id}}>{{item.titulo}}</ion-option>
+
+
+        </ion-select>
+    </ion-item>
+  </ion-col>
+
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <button ion-button full round color="secondary" (click)="crear_pregunta()">Agregar pregunta </button>
+
+    <button ion-button full round color="secondary" (click)="guardar_trivia()">Guardar trivia</button>
+  </ion-toolbar>
+</ion-footer>

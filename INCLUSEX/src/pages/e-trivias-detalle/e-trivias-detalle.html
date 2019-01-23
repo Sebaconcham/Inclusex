@@ -1,0 +1,33 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Detalle trivia </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+      <ion-item  *ngFor="let item of _pr.t_preguntas">
+        <div text-wrap>
+              <h2>pregunta: {{item.pregunta}}</h2>
+              <b><p>alternativa correcta:</p></b>
+              <p>{{item.alternativa_c}}</p>
+              <b><p>alternativas incorrectas</p></b>
+              <p>{{item.alternativa_i1}}</p>
+              <p>{{item.alternativa_i2}}</p>
+              <p>{{item.alternativa_i3}}</p>
+              <!-- <p>numero de preguntas:{{item.numero_preguntas}}</p> -->
+        </div>
+      <button ion-button clear item-end (click)="eliminar_pregunta(item.id)">
+        eliminar</button>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <button ion-button full round color="secondary" (click)="agregar_pregunta()">Agregar pregunta </button>
+    <button ion-button full round color="danger" (click)="eliminar_trivia()">Eliminar trivia </button>
+
+  </ion-toolbar>
+</ion-footer>

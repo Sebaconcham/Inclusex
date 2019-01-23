@@ -1,0 +1,110 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { ErrorHandler, NgModule } from '@angular/core';
+import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { StatusBar } from '@ionic-native/status-bar';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { MyApp } from './app.component';
+import {ProgressBarModule} from "angular-progress-bar"
+import {MensajeService,ContenidoService,LoginService,RegistrarService,TriviasService} from '../providers/index.services';
+import {URegistroPage,
+        UContenidosPage,
+        UContenidosDetallePage,
+        UMensajesPage,
+        UMensajesCrearPage,
+        UMensajesVerrespuestaPage,
+        UTriviasPage,
+        UTriviasJugarPage,
+        UTriviasResultadoPage,
+        UAjustesPage,
+        ERegistroPage,
+        EContenidosCrearPage,
+        EContenidosEditarPage,
+        EContenidosPage,
+        EContenidosDetallePage,
+        EMensajesPage,
+        EMensajesResponderPage,
+        ETriviasPage,
+        ETriviasDetallePage,
+        ETriviasCrearPage,
+        ETriviasCrearpreguntaPage,
+        EAjustesPage,
+        LoginPage,
+        HomePage} from '../pages/index.paginas';
+@NgModule({
+  declarations: [
+  MyApp,
+  ERegistroPage,
+  EContenidosPage,
+  EContenidosEditarPage,
+  EContenidosDetallePage,
+  EContenidosCrearPage,
+  EMensajesPage,
+  EMensajesResponderPage,
+  ETriviasPage,
+  ETriviasDetallePage,
+  ETriviasCrearPage,
+  ETriviasCrearpreguntaPage,
+  EAjustesPage,
+  URegistroPage,
+  UContenidosPage,
+  UContenidosDetallePage,
+  UMensajesPage,
+  UMensajesCrearPage,
+  UMensajesVerrespuestaPage,
+  UTriviasPage,
+  UTriviasJugarPage,
+  UTriviasResultadoPage,
+  UAjustesPage,
+  LoginPage,
+  HomePage,
+  ],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    IonicModule.forRoot(MyApp),
+    ProgressBarModule
+  ],
+  bootstrap: [IonicApp],
+  entryComponents: [
+    MyApp,
+    ERegistroPage,
+    EContenidosPage,
+    EContenidosEditarPage,
+    EContenidosDetallePage,
+    EContenidosCrearPage,
+    EMensajesPage,
+    EMensajesResponderPage,
+    ETriviasPage,
+    ETriviasDetallePage,
+    ETriviasCrearPage,
+    ETriviasCrearpreguntaPage,
+    EAjustesPage,
+    URegistroPage,
+    UContenidosPage,
+    UContenidosDetallePage,
+    UMensajesPage,
+    UMensajesCrearPage,
+    UMensajesVerrespuestaPage,
+    UTriviasPage,
+    UTriviasJugarPage,
+    UTriviasResultadoPage,
+    UAjustesPage,
+    LoginPage,
+    HomePage,
+  ],
+  providers: [
+
+    StatusBar,
+    SplashScreen,
+    HttpClientModule,
+    LoginService,
+    RegistrarService,
+    ContenidoService,
+    MensajeService,
+    TriviasService,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+
+  ]
+})
+export class AppModule {}
